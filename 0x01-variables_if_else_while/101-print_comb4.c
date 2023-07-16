@@ -5,35 +5,30 @@
  */
 int main(void)
 {
-	int i, j, k;
+	int ones = '0';
+	int tens = '0';
+	int hundreds = '0';
 
-	i = 48;
-	j = 48;
-	k = 48;
-
-	while (i < 58)
+	for (hundreds = '0'; hundreds <= '9'; hundred++)
 	{
-		j = i + 1;
-		while (j < 58)
+		for (tens = '0'; tens <= '9'; tens++)
 		{
-			k = j + 1;
-			while (k < 58)
+			for (ones = '0'; ones <= '9'; ones++)
 			{
-				putchar(i);
-				putchar(j);
-				putchar(k);
-				if (i < 55 || j < 56 || k < 57)
+				if (!((ones == tens) || (tens == hundreds) || (tens > ones) || (hundreds > tens)))
 				{
-					putchar(44);
-					putchar(32);
+					putchar(hundreds);
+					putchar(tens);
+					putchar(ones);
+					if (!(ones == '9' && hundreds == '7' && tens == '8'))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-				k++;
 			}
-			j++;
 		}
-		i++
+		putchar('\n');
+		return (0);
 	}
-	putchar(10);
-
-	return (0);
 }
