@@ -16,7 +16,8 @@ int main(void)
 		{
 			for (ones = '0'; ones <= '9'; ones++)
 			{
-				if (!((ones == tens) || (tens == hundreds) || (tens == ones) || (hundreds > tens)))
+				if (!((ones == tens) || (tens == hundreds) || 
+							(tens == ones) || (hundreds > tens)))
 				{
 					putchar(hundreds);
 					putchar(tens);
@@ -29,7 +30,8 @@ int main(void)
 				}
 			}
 		}
+	}
 		putchar('\n');
 		return (0);
-	}
+
 }
